@@ -1,5 +1,10 @@
 package tiendm.algorithm.sort;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import tiendm.util.Util;
 
 public class RadixSort {
@@ -18,19 +23,18 @@ public class RadixSort {
 		int exp = 1;
 		for(int i=1;i<=maxLoop;i++){
 			int digit = 0;
-			int count[] = new int [10];
+			int count[] = new int [11];
 			int output[] = new int [arr.length];
 			for(int j=0;j<arr.length;j++){
 				digit = (arr[j]/exp)%10;
-				count[digit]++;
+				count[digit+1]++;
 			}
 			for(int j=1;j<10;j++){
 				count[j] += count[j-1];
 			}
-			for(int j=arr.length-1;j>=0;j--){
+			for(int j=0;j<arr.length;j++){
 				digit = (arr[j]/exp)%10;
-				output[count[digit]-1] = arr[j];
-				count[digit]--;
+				output[count[digit]++] = arr[j];
 			}
 			for(int j=0;j<arr.length;j++){
 				arr[j] = output[j];
