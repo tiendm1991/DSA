@@ -5,10 +5,10 @@ import java.util.Random;
 public class Util {
 	
 	public static int[] generateArray(int n, int m){
-		int [] x = new int[m];
+		int [] x = new int[n];
 		Random rand = new Random();
-		for(int i=0;i<m;i++){
-			x[i] = rand.nextInt(n);
+		for(int i=0;i<n;i++){
+			x[i] = rand.nextInt(m);
 		}
 		return x;
 	}

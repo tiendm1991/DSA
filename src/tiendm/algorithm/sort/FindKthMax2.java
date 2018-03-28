@@ -4,7 +4,7 @@ import tiendm.util.Util;
 
 public class FindKthMax2 {
 	public static void main(String[] args) {
-		int nbTest = 100000, nbCorrect = 0;
+		int nbTest = 1000, nbCorrect = 0;
 		for(int i = 0; i < nbTest; i++){
 			if(test()) nbCorrect++;
 		}
