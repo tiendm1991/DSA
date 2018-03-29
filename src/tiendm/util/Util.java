@@ -25,6 +25,16 @@ public class Util {
 		System.out.println();
 	}
 	
+	public static void print2DArray(int[][] x){
+		if (x.length == 0) return;
+		for(int i=0;i<x.length;i++){
+			for(int j=0;j<x[0].length;j++){
+				System.out.print(x[i][j] + "\t");
+			}
+			System.out.println();
+		}
+	}
+	
 	public static void swap(int[] arr, int i1, int i2){
 		int tmp = arr[i1];
 		arr[i1]= arr[i2];
