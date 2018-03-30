@@ -13,14 +13,20 @@ public class CoinChange {
 	}
 	
 	private int countDP(int[] arr, int n, int sum) {
-		int[] t = new int[sum+1];
-		t[0] = 1;
-		for(int i = 0; i < n; i++){
-			for(int j = arr[i]; j <= sum; j++){
-				t[j] += t[j-arr[i]];
+		int[][] t = new int[n+1][sum+1];
+		for(int i = 0; i <= n; i++){
+			t[i][0] = 1;
+		}
+		for(int i = 1; i <= sum; i++){
+			t[0][sum] = 0;
+		}
+		for(int i = 1; i <= n; i++){
+			for(int j = 1; j <= sum; j++){
+				t[i][j] = t[i-1][j];
+				if(j-arr[i-1] >= 0) t[i][j] += t[i][j-arr[i-1]];
 			}
 		}
-		return t[sum];
+		return t[n][sum];
 	}
 	
 	public static void main(String[] args) {
