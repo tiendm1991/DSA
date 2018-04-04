@@ -2,6 +2,7 @@ package tiendm.algorithm.devideAndconquer;
 
 import java.util.Arrays;
 
+import tiendm.algorithm.sort.QuickSort;
 import tiendm.util.Util;
 
 public class MinAbsSum {
@@ -35,7 +36,7 @@ public class MinAbsSum {
 		int i = 0, j = arr.length-1;
 		int minsum = Integer.MAX_VALUE;
 		int sum = 0, id1 = i, id2 = j;
-		Arrays.sort(arr);
+		QuickSort.quickSort(arr, 0, arr.length-1);
 		while (i < j) {
 			sum = Math.abs(arr[i] + arr[j]);
 			if(sum < minsum){
