@@ -31,13 +31,10 @@ public class MergeSort2 {
 		int[] newArr = new int[L.length+R.length];
 		while(i<n1 && j<n2){
 			if(L[i]<R[j]){
-				newArr[c] = L[i];
-				i++;
+				newArr[c++] = L[i++];
 			}else{
-				newArr[c] = R[j];
-				j++;
+				newArr[c++] = R[j++];
 			}
-			c++;
 		}
 		for(int k = i;k<L.length;k++){
 			newArr[c++] = L[k];
