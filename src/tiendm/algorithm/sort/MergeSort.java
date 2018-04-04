@@ -33,13 +33,10 @@ public class MergeSort {
 		R= Util.copArr(arr, m+1, r);
 		while(i<n1 && j<n2){
 			if(L[i]<R[j]){
-				arr[c] = L[i];
-				i++;
+				arr[c++] = L[i++];
 			}else{
-				arr[c] = R[j];
-				j++;
+				arr[c++] = R[j++];
 			}
-			c++;
 		}
 		for(int k = i;k<L.length;k++){
 			arr[c++] = L[k];
