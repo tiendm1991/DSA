@@ -30,7 +30,7 @@ public class CountInversions {
 		if(l<r){
 			count = mergesort(arr, l, m);
 			count += mergesort(arr, m+1, r);
-			count += merge(arr, l, m, r);
+			count += merge(arr, l, m+1, r);
 		}
 		return count;
 	}
@@ -38,7 +38,7 @@ public class CountInversions {
 	private int merge(int[] arr, int left, int mid, int right) {
 		int i=left;
 		int j=mid;
-		int k = 0; 
+		int k = left; 
 		int count = 0;
 		int[] tmp = new int[arr.length];
 		while ((i < mid) && (j <= right)) {
@@ -46,7 +46,7 @@ public class CountInversions {
 				tmp[k++] = arr[i++];
 			}else {
 				tmp[k++] = arr[j++];
-				count += (mid-i);
+				count += (mid - i) ;
 			}
 		}
 		

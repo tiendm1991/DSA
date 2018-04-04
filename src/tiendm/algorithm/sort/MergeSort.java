@@ -4,7 +4,8 @@ import tiendm.util.Util;
 
 public class MergeSort {
 	public static void main(String[] args) {
-		int[] arr = Util.generateArray(10);
+//		int[] arr = Util.generateArray(10);
+		int[] arr = {8,	5,	6,	7,	0	};
 		System.out.println("=== before sort");
 		Util.printArray(arr);
 		mergesort(arr,0,arr.length-1);
