@@ -24,10 +24,11 @@ public class Util {
 	
 	public static void printArray(int[] x){
 		if (x.length == 0) return;
+		StringBuilder builder = new StringBuilder();
 		for(int i=0;i<x.length;i++){
-			System.out.print(x[i] + "\t");
+			builder.append(", "+x[i]);
 		}
-		System.out.println();
+		System.out.println(builder.substring(2));
 	}
 	
 	public static void print2DArray(int[][] x){
