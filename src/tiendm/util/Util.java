@@ -4,6 +4,11 @@ import java.util.Random;
 
 public class Util {
 	
+	public static int generateNumInt(int n){
+		Random rand = new Random();
+		return rand.nextInt(n);
+	}
+	
 	public static int[] generateArray(int n, int m){
 		int [] x = new int[n];
 		Random rand = new Random();
