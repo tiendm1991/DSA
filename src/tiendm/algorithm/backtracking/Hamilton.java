@@ -5,7 +5,6 @@ public class Hamilton {
 	private int[] path;
 	
 	public Hamilton(int[][] graph) {
-		super();
 		this.graph = graph;
 	}
 
